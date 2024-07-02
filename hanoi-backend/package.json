@@ -1,0 +1,22 @@
+{
+  "name": "tower-of-hanoi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "start": "node App.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/krystelbaca/tower-of-hanoi.git"
+  },
+  "author": "Krystel Baca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krystelbaca/tower-of-hanoi/issues"
+  },
+  "homepage": "https://github.com/krystelbaca/tower-of-hanoi#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
