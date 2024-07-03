@@ -1,7 +1,11 @@
 const { solveTowerOfHanoi } = require('../../Hanoi')
 
 const playHanoi = async (disks) => {
-  return solveTowerOfHanoi(disks)
+  try {
+    return solveTowerOfHanoi(disks)
+  } catch (error) {
+    throw new Error('Error solving Tower of Hanoi');
+  }
 }
 
 module.exports = { playHanoi }
