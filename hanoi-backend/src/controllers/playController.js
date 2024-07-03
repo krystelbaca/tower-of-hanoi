@@ -2,11 +2,15 @@ const { playHanoi } = require('../services/playService')
 
 const play = async (req, res) => {
   try {
-    const response = await playHanoi(disks)
+    const { numDisks } = req.body
+    const response = await playHanoi(numDisks)
 
-    return response.status(201).json()
+    return res.status(201).json({
+      moves: response
+    })
   } catch (error) {
-    return error
+    console.error(error)
+    return res.status(500).json({ error: 'Server internal error' })
   }
 }
 

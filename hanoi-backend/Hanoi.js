@@ -1,6 +1,6 @@
 function towerOfHanoi(n, source, auxiliary, destination, moves) {
   if (n === 1) {
-    moves.push(`Return disk ${n} from ${source} to ${destination}`)
+    moves.push(`Move disk ${n} from ${source} to ${destination}`)
     return
   }
 
