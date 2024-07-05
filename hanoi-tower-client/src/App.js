@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { getHanoiSolution } from './api/HanoiService';
 import AutoSolveHanoi from './components/AutoSolveHanoi';
-import PlayHanoi from './components/PlayHanoi';
-import SolutionSteps from './components/SolutionSteps';
 import './App.css';
 
 function App() {
@@ -16,16 +14,14 @@ function App() {
 
     const handleSolve = async () => {
         try {
+            setMoves([]); // Reset moves
+            setMode(''); // Reset mode
             const solution = await getHanoiSolution(numDisks);
             setMoves(solution);
             setMode('auto');
         } catch (error) {
             alert('Failed to get solution');
         }
-    };
-
-    const handlePlay = () => {
-        setMode('play');
     };
 
     const handleReset = () => {
@@ -43,13 +39,10 @@ function App() {
                 min="1"
             />
             <button onClick={handleSolve}>Get Solution</button>
-            <button onClick={handlePlay} disabled={!moves.length}>Play</button>
             <button onClick={handleReset}>Reset</button>
             <div className="hanoi-container">
                 {mode === 'auto' && <AutoSolveHanoi numDisks={numDisks} moves={moves} />}
-                {mode === 'play' && <PlayHanoi numDisks={numDisks} />}
             </div>
-            <SolutionSteps moves={moves} />
         </div>
     );
 }
