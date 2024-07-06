@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import DisplayHanoi from './DisplayHanoi';
-import '../styles/Hanoi.css';
+import DisplayHanoi from '../../components/DisplayHanoi';
+import '../../styles/Hanoi.css';
 
 const rodMap = {
     A: 0,

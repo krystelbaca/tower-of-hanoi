@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import AutoSolveHanoi from './AutoSolveHanoi';
+import AutoSolveHanoi from '../hooks/auto-solve/AutoSolveHanoi';
+import PlayHanoi from '../hooks/playable/PlayHanoi';
 import Controls from './Controls';
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
             />
             <div className="hanoi-container">
                 {mode === 'auto' && <AutoSolveHanoi numDisks={numDisks} moves={moves} />}
-                {/* {mode === 'play' && <PlayHanoi numDisks={numDisks} />} */}
+                {mode === 'play' && <PlayHanoi numDisks={numDisks} />}
             </div>
         </div>
     );

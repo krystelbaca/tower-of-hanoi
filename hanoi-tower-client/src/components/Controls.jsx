@@ -45,6 +45,7 @@ const Controls = ({ numDisks, setNumDisks, setMode, setMoves }) => {
               value={numDisks}
               onChange={handleInputChange}
               min="3"
+              max="20"
             />
           </label>
           {minMoves !== null && (
