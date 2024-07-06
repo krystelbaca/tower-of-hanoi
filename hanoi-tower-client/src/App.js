@@ -1,50 +1,13 @@
-import React, { useState } from 'react';
-import { getHanoiSolution } from './api/HanoiService';
-import AutoSolveHanoi from './components/AutoSolveHanoi';
+import React from 'react';
 import './App.css';
+import Home from './components/HomeView';
 
 function App() {
-    const [numDisks, setNumDisks] = useState(3);
-    const [moves, setMoves] = useState([]);
-    const [mode, setMode] = useState(''); // 'auto' or 'play'
-
-    const handleInputChange = (e) => {
-        setNumDisks(Number(e.target.value));
-    };
-
-    const handleSolve = async () => {
-        try {
-            setMoves([]); // Reset moves
-            setMode(''); // Reset mode
-            const solution = await getHanoiSolution(numDisks);
-            setMoves(solution);
-            setMode('auto');
-        } catch (error) {
-            alert('Failed to get solution');
-        }
-    };
-
-    const handleReset = () => {
-        setMoves([]);
-        setMode('');
-    };
-
-    return (
-        <div className="app">
-            <h1>Tower of Hanoi Solver</h1>
-            <input
-                type="number"
-                value={numDisks}
-                onChange={handleInputChange}
-                min="1"
-            />
-            <button onClick={handleSolve}>Get Solution</button>
-            <button onClick={handleReset}>Reset</button>
-            <div className="hanoi-container">
-                {mode === 'auto' && <AutoSolveHanoi numDisks={numDisks} moves={moves} />}
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <Home />
+    </div>
+  )
 }
 
 export default App;

@@ -1,10 +1,7 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,19 +10,72 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.home {
+  width: 600px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 200vh;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  text-align: center;
+  margin-top: 60px;
+  height: 30vh;
+}
+
+.title {
+  color: #08979c;
+}
+
+p {
+  text-indent: 50px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.controls input {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  text-align: center;
+  width: 100px;
+}
+
+.controls .buttons {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b37feb;
+  color: white;
+  cursor: pointer;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
 }
 
 @keyframes App-logo-spin {
