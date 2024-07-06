@@ -15,7 +15,10 @@ function solveTowerOfHanoi(numDisks) {
 
   towerOfHanoi(numDisks, 'A', 'B', 'C', moves)
 
-  return moves
+  return {
+    minMoves: moves.length,
+    moves
+  }
 }
 
 module.exports = {

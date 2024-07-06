@@ -5,9 +5,7 @@ const play = async (req, res) => {
     const { numDisks } = req.body
     const response = await playHanoi(numDisks)
 
-    return res.status(201).json({
-      moves: response
-    })
+    return res.status(201).json(response)
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error: 'Server internal error' })
