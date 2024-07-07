@@ -41,21 +41,23 @@ const DisplayHanoi = ({ rods = [[], [], []], onDrop, isPlayable }) => {
                     onDrop={(event) => handleDrop(event, rodIndex)}
                 >
                     <AnimatePresence>
-                        {rod.map((disk) => (
-                            <motion.div
-                                key={disk}
-                                className="disk"
-                                style={{ width: `${disk * 20}px`, backgroundColor: getColor(disk - 1) }}
-                                draggable={isPlayable}
-                                onDragStart={isPlayable ? (event) => handleDragStart(event, disk, rodIndex) : null}
-                                initial={{ opacity: 0, y: -50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 50 }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                {disk}
-                            </motion.div>
-                        ))}
+                        {rod.map((disk) => {
+                            return ( 
+                                <motion.div
+                                    key={disk}
+                                    className="disk"
+                                    style={{ width: `${disk * 20}px`, backgroundColor: getColor(disk - 1) }}
+                                    draggable={isPlayable}
+                                    onDragStart={isPlayable ? (event) => handleDragStart(event, disk, rodIndex) : null}
+                                    initial={{ opacity: 0, y: -50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 50 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    {disk}
+                                </motion.div>
+                            )
+                        })}
                     </AnimatePresence>
                 </div>
             ))}

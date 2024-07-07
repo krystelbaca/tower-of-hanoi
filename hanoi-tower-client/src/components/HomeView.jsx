@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import AutoSolveHanoi from '../hooks/auto-solve/AutoSolveHanoi';
-import PlayHanoi from '../hooks/playable/PlayHanoi';
+import PlayHanoi from './PlayHanoi';
 import Controls from './Controls';
 
 const Home = () => {

@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import DisplayHanoi from '../../components/DisplayHanoi';
-import '../../styles/Hanoi.css';
-
-const PlayHanoi = ({ numDisks }) => {
+import { useEffect, useState } from 'react';
+const usePlayHanoi = (numDisks) => {
   const [rods, setRods] = useState([[], [], []]);
 
   useEffect(() => {
@@ -20,7 +17,10 @@ const PlayHanoi = ({ numDisks }) => {
     setRods(newRods);
   };
 
-  return <DisplayHanoi rods={rods} onDrop={handleDrop} isPlayable />;
-};
+  return {
+    handleDrop,
+    rods,
+  }
+}
 
-export default PlayHanoi;
+export default usePlayHanoi
