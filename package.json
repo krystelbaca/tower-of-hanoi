@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node backend/server.js",
-    "heroku-postbuild": "cd frontend && npm install && npm run build && cd .. && cd backend && npm install"
+    "heroku-postbuild": "cd hanoi-tower-client && npm install && npm run build && cd .. && cd hanoi-backend && npm install"
   },
   "engines": {
     "node": "16.x"
