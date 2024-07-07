@@ -23,6 +23,7 @@ const Controls = ({ numDisks, setNumDisks, setMode, setMoves }) => {
         setMoves([]);
         setMode('');
         setMinMoves(null)
+        setNumDisks(prev => prev);
     };
 
     const handlePlay = () => {

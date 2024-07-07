@@ -5,7 +5,7 @@ import '../../styles/Hanoi.css';
 const AutoSolveHanoi = ({ numDisks, moves }) => {
     const [rods, setRods] = useState([[], [], []]);
     const [currentMove, setCurrentMove] = useState(0);
-    
+
     useEffect(() => {
       if (!numDisks) return
 
@@ -21,8 +21,7 @@ const AutoSolveHanoi = ({ numDisks, moves }) => {
       const rodMap = { A: 0, B: 1, C: 2 };
 
       const move = moves[currentMove]
-      console.log('MOVE', move)
-      console.log('CURRENT MOVE', currentMove)
+
       const match = move.match(/Move disk (\d+) from (\w) to (\w)/);
 
       if (match) {
@@ -31,26 +30,25 @@ const AutoSolveHanoi = ({ numDisks, moves }) => {
         const destinationIndex = rodMap[toRod];
         const disk = parseInt(diskNum);
 
-        setTimeout(() => {
+        const intervalId = setInterval(() => {
           setRods((prevRods) => {
             const newRods = prevRods.map((rod) => [...rod]);
 
             const diskIndex = newRods[sourceIndex].findIndex(
               d => d === disk
             )
-            if (diskIndex !== -1) {
-              console.log('DISK INDEX: ', diskIndex)
+            if (diskIndex !== -1) { 
               newRods[sourceIndex].splice(diskIndex, 1);
               newRods[destinationIndex].push(parseInt(diskNum));
             } else {
               console.error(`Disk ${disk} not found on rod ${fromRod}`);
             }
-  
-            console.log('Updated Rods: ', newRods);
             return newRods
           })
           setCurrentMove(prevCurrentMove => prevCurrentMove + 1);
-        }, 1000)
+        }, 2000)
+
+        return () => clearInterval(intervalId)
       }
     }, [currentMove, moves]);
 
