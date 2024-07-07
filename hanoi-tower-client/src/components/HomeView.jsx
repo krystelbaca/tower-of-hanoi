@@ -6,7 +6,7 @@ import Controls from './Controls';
 
 const Home = () => {
     const [numDisks, setNumDisks] = useState(3);
-    const [mode, setMode] = useState(''); // 'auto' or 'play'
+    const [mode, setMode] = useState('');
     const [moves, setMoves] = useState([]);
 
     return (
