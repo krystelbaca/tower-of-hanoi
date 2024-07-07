@@ -2,7 +2,7 @@
   "name": "tower-hanoi-project",
   "version": "1.0.0",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "node hanoi-backend/App.js",
     "heroku-postbuild": "cd hanoi-tower-client && npm install && npm run build && cd .. && cd hanoi-backend && npm install"
   },
   "engines": {
