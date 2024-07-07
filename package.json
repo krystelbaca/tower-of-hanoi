@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node hanoi-backend/App.js",
-    "heroku-postbuild": "cd hanoi-tower-client && npm install && npm run build && cd .. && cd hanoi-backend && npm install"
+    "heroku-postbuild": "cd hanoi-tower-client && npm install && npm run build && cd .. && cd hanoi-backend && npm install",
+    "install-client": "cd hanoi-tower-client && npm install && npm run build",
+    "install-server": "cd hanoi-backend && npm install"
   },
   "engines": {
     "node": "16.x"
