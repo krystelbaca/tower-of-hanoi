@@ -12,12 +12,6 @@ code {
     monospace;
 }
 
-.hanoi-visualizer {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
 .rod {
   width: 100px;
   height: 300px;

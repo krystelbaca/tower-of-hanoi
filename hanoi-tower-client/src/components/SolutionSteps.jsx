@@ -1,12 +1,18 @@
 import React from 'react';
+import { useMoves } from '../context/MovesContext';
 
-const SolutionSteps = ({ moves }) => {
+const SolutionSteps = () => {
+  const { moves } = useMoves();
+  console.log('MOVES', moves)
   return (
-    <ul>
-      {moves.map((move, index) => (
-        <li key={index}>{move}</li>
-      ))}
-    </ul>
+    <div>
+      <span>Solution steps:</span>
+    <ol>
+    {moves && moves.map((move, index) => (
+      <li key={index}>{move}</li>
+    ))}
+  </ol>
+    </div>
   );
 };
 

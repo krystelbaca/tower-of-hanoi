@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import DisplayHanoi from '../../components/DisplayHanoi';
 import '../../styles/Hanoi.css';
+import { useMoves } from '../../context/MovesContext';
 
-const AutoSolveHanoi = ({ numDisks, moves }) => {
+const AutoSolveHanoi = ({ numDisks }) => {
+    const { moves } = useMoves();
     const [rods, setRods] = useState([[], [], []]);
     const [currentMove, setCurrentMove] = useState(0);
 
