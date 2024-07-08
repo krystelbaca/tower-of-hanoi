@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:4040';
+const API_URL = process.env.FRONTEND_URI || 'http://localhost:4040';
 
 export const getHanoiSolution = async (numDisks) => {
     try {
