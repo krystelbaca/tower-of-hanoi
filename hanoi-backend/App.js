@@ -8,7 +8,8 @@ const cors = require('cors');
 
 const router = require('./Router.js')
 
-require('dotenv').config();
+dotenv.config()
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const port = process.env.PORT || 4040;
 
