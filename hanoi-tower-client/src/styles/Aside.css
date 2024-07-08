@@ -1,0 +1,27 @@
+
+.aside {
+  background-color: white;
+  align-items: center;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.aside p {
+  font-size: 14px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.aside ol {
+  border: solid 2px #08979c;
+  font-size: 14px;
+  line-height: 1.6;
+  list-style-type: none;
+  align-items: center;
+  list-style-type: decimal;
+}
+
+.aside ol li {
+  margin: 5px 0;
+  padding-right: 5px;
+}

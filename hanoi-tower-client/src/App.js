@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import Home from './components/HomeView';
+import MainContainer from './components/MainContainer';
+import { MovesProvider } from './context/MovesContext';
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <MovesProvider>
+      <MainContainer />
+    </MovesProvider>
   )
 }
 
